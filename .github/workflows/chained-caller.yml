@@ -1,0 +1,14 @@
+# .github/workflows/chained-caller.yml
+name: Chained Caller
+
+on:
+  workflow_run:
+    workflows: ["Trigger via Curl"]
+    types:
+      - completed
+
+jobs:
+  run-after:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggered after curl-based trigger workflow."
