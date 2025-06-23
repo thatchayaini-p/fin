@@ -1,0 +1,16 @@
+# .github/workflows/multi-workflow-caller.yml
+name: Multi Workflow Caller
+
+on:
+  push:
+
+jobs:
+  trigger-one:
+    uses: ./.github/workflows/child.yml
+    with:
+      name: One
+
+  trigger-two:
+    uses: ./.github/workflows/child.yml
+    with:
+      name: Two
