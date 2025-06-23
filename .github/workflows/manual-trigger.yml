@@ -1,0 +1,11 @@
+# .github/workflows/manual-trigger.yml
+name: Manual Trigger Caller
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-child:
+    uses: ./.github/workflows/child.yml
+    with:
+      name: ManualRunner
